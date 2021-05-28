@@ -1,0 +1,16 @@
+<h1>Showpage for Lists</h1>
+<h2><%= @list.name %></h2>
+<% @list.bookmarks.each do |bookmark| %>
+<div> <%= bookmark.movie.title %> <span> <%= link_to "delete",
+ bookmark_path(bookmark), method: :delete,
+  data: { confirm: "Are you sure you want to delete list?" } %> </span></div>
+ <div> <%= bookmark.comment %> <span> <%= link_to "delete",
+ bookmark_path(bookmark), method: :delete,
+  data: { confirm: "Are you sure you want to delete list?" } %> </span></div>
+<% end %>
+
+
+
+<%= link_to "Add a Movie to this list", new_list_bookmark_path(@list) %>
+<%= link_to 'Back', lists_path %>
+

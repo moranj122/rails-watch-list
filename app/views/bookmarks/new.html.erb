@@ -1,0 +1,10 @@
+<h1>Bookmark - comment only</h1>
+<%= simple_form_for ([@list, @bookmark]) do |f| %>
+  <%= f.association :movie, label_method: :title, value_method: :id%>
+  <%= f.input :comment %>
+    <%= f.submit %>
+<% end %>
+
+
+<!-- <form action="/lists/:list_id/bookmarks" method ="post"></form>
+ -->
